@@ -21,9 +21,9 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "music_soundcloud_link"
-    label: "Music Soundcloud Link"
-    folder: "_posts/music/soundcloud"
+  - name: "music"
+    label: "Music Iframe"
+    folder: "_posts/music"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: json
@@ -31,16 +31,4 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Link", name: "link", widget: "string"}
-
-  - name: "music_mixcloud_link"
-    label: "Music Mixcloud Link"
-    folder: "_posts/music/mixcloud"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    format: json
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Iframe", name: "iframe", widget: "markdown"}
