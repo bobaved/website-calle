@@ -1,0 +1,21 @@
+{
+  "title": "Musik List",
+  "date": "2018-11-01T15:19:06.736Z",
+  "music": [
+    {
+      "title": "C^M - Morning",
+      "date": "2018-11-01T15:19:09.476Z",
+      "iframe": "<iframe width=\"100%\" height=\"120\" src=\"https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fcallemalmstrom1%2Fcm-morning%2F\" frameborder=\"0\" ></iframe>"
+    },
+    {
+      "title": "C^M Spring Mix",
+      "date": "2018-11-01T15:20:15.206Z",
+      "iframe": "<iframe width=\"100%\" height=\"120\" src=\"https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fcallemalmstrom1%2Fspring-mix-2014-deep-love%2F\" frameborder=\"0\" ></iframe>"
+    },
+    {
+      "title": "C^M & Xifo Valencia Dj set",
+      "date": "2018-11-01T15:20:59.764Z",
+      "iframe": "<iframe width=\"100%\" height=\"120\" src=\"https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fcallemalmstrom1%2Fcalle-malmstrom-xifo-valencia-dj-set-elektronic-monday%2F\" frameborder=\"0\" ></iframe>"
+    }
+  ]
+}
