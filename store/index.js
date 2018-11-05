@@ -1,5 +1,4 @@
 import Vuex from 'vuex'
-
 const createStore = () => {
   return new Vuex.Store({
     state: () => ({
@@ -12,7 +11,10 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit({ commit }) {
-        commit('setMusicPaths', ['lala/lala', 'bebe/bebe'])
+        const fs = require('fs-extra')
+        let path = 'content/music-list'
+        let musicList = fs.readdirSync(path)
+        commit('setMusicPaths', musicList.map(item => path + '/' + item))
       }
     }
   })

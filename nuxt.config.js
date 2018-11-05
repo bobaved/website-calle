@@ -93,6 +93,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      config.node = { fs: 'empty' }
     }
   }
 }
