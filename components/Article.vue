@@ -17,7 +17,7 @@
 
       <nuxt-link
         to="/music"
-        class="button--lila bottom">
+        class="button--lila bottom button-shadow">
         Music
       </nuxt-link>
     </div>

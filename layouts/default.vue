@@ -198,6 +198,10 @@ a {
 
 .bottom {
   position: relative;
-  bottom: -23px;
+  bottom: -15px;
+}
+
+.button-shadow {
+  box-shadow: 5px 8px 20px -3px rgba(0, 0, 0, 0.45);
 }
 </style>
