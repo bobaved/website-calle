@@ -1,23 +1,56 @@
+import Vue from 'vue'
 import Vuex from 'vuex'
-const createStore = () => {
-  return new Vuex.Store({
-    state: () => ({
-      musicPaths: []
-    }),
-    mutations: {
-      setMusicPaths(state, paths) {
-        state.musicPaths = paths
-      }
+Vue.use(Vuex)
+
+const createStore = () =>
+  new Vuex.Store({
+    state: {
+      music: [],
+      art: [],
+      posts: []
     },
     actions: {
-      nuxtServerInit({ commit }) {
-        const fs = require('fs-extra')
-        let path = 'content/music-list'
-        let musicList = fs.readdirSync(path)
-        commit('setMusicPaths', musicList.map(item => path + '/' + item))
+      async nuxtServerInit({ dispatch }) {
+        await dispatch('getMusic')
+        await dispatch('getArt')
+        await dispatch('getPosts')
+      },
+      async getMusic({ state, commit }) {
+        const req = require.context('~/content/music/', false, /\.json$/)
+        const searchMusic = await req.keys().map(key => ({
+          ...req(key),
+          _path: `/music/${key.replace('.json', '').replace('./', '')}`
+        }))
+        commit('SET_MUSIC', searchMusic.reverse())
+      },
+      async getArt({ state, commit }) {
+        const req = require.context('~/content/art/', false, /\.json$/)
+        const searchArt = await req.keys().map(key => ({
+          ...req(key),
+          _path: `/art/${key.replace('.json', '').replace('./', '')}`
+        }))
+        commit('SET_ART', searchArt.reverse())
+      },
+      async getPosts({ state, commit }) {
+        const req = require.context('~/content/post/', false, /\.json$/)
+        const searchPosts = await req.keys().map(key => ({
+          ...req(key),
+          _path: `/post/${key.replace('.json', '').replace('./', '')}`
+        }))
+        commit('SET_POSTS', searchPosts.reverse())
+      }
+    },
+    mutations: {
+      SET_MUSIC(state, data) {
+        state.music = data
+      },
+      SET_ART(state, data) {
+        state.art = data
+      },
+      SET_POSTS(state, data) {
+        state.posts = data
       }
     }
   })
-}
 
 export default createStore
