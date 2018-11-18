@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+const SET_MUSIC = 'set_music'
+const SET_ART = 'set_art'
+const SET_POSTS = 'set_posts'
+
 const createStore = () =>
   new Vuex.Store({
     state: {
@@ -21,7 +25,7 @@ const createStore = () =>
           ...req(key),
           _path: `/music/${key.replace('.json', '').replace('./', '')}`
         }))
-        commit('SET_MUSIC', searchMusic.reverse())
+        commit(SET_MUSIC, searchMusic.reverse())
       },
       async getArt({ state, commit }) {
         const req = require.context('~/content/art/', false, /\.json$/)
@@ -29,7 +33,7 @@ const createStore = () =>
           ...req(key),
           _path: `/art/${key.replace('.json', '').replace('./', '')}`
         }))
-        commit('SET_ART', searchArt.reverse())
+        commit(SET_ART, searchArt.reverse())
       },
       async getPosts({ state, commit }) {
         const req = require.context('~/content/post/', false, /\.json$/)
@@ -37,17 +41,17 @@ const createStore = () =>
           ...req(key),
           _path: `/post/${key.replace('.json', '').replace('./', '')}`
         }))
-        commit('SET_POSTS', searchPosts.reverse())
+        commit(SET_POSTS, searchPosts.reverse())
       }
     },
     mutations: {
-      SET_MUSIC(state, data) {
+      [SET_MUSIC](state, data) {
         state.music = data
       },
-      SET_ART(state, data) {
+      [SET_ART](state, data) {
         state.art = data
       },
-      SET_POSTS(state, data) {
+      [SET_POSTS](state, data) {
         state.posts = data
       }
     }

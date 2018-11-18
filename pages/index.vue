@@ -43,42 +43,24 @@
       <div class="p-t-180 p-b-60"/>
 
     </section>
-    <blogArticle
-      header="My own Header1"
-      sub-header="Do I want this?"
-      text="HALLO"
-      img="~/assets/kachel-auge.jpg"/>
+    <artArticle
+      v-for="art in $store.state.art"
+      :key="art._path"
+      :item="art"/>
 
-    <blogArticle
-      :bg-grey="true"
-      header="My own Header2"
-      sub-header="Do I want this?"
-      text="HALLO"
-      img="~/assets/kachel-auge.jpg"/>
-
-    <blogArticle
-      header="My own Header3"
-      sub-header="Do I want this?"
-      text="HALLO"
-      img="~/assets/kachel-auge.jpg"/>
-
-    <blogArticle
-      :bg-grey="true"
-      header="My own Header4"
-      sub-header="Do I want this?"
-      text="HALLO"
-      img="~/assets/kachel-auge.jpg"/>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
 import Article from '~/components/Article.vue'
+import ArtArticle from '~/components/ArtArticle.vue'
 
 export default {
   components: {
     Logo,
-    blogArticle: Article
+    blogArticle: Article,
+    artArticle: ArtArticle
   }
 }
 </script>

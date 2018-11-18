@@ -15,8 +15,11 @@
       <p>
         {{ item.body }}
       </p>
+      <p>
+        <img :src="item.image">
+      </p>
       <nuxt-link
-        to="/music"
+        to="/art"
         class="button--lila bottom button-shadow">
         Music
       </nuxt-link>
