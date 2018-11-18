@@ -6,7 +6,7 @@
     <div>
       <a class="center">
         <img
-          src="/kachel-auge.jpg"
+          src="/art.png"
           style="box-shadow: 12px 12px 12px -6px rgba(0,0,0,.45);">
       </a>
       <h3 class="mb-4">
