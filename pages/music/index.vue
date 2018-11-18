@@ -1,19 +1,22 @@
 <template>
   <section class="container">
-    <div class="bg-danger">
-      <h1 class="title">
-        Music
-      </h1>
-    </div>
+    <music-article
+      v-for="music in $store.state.music"
+      :key="music._path"
+      :item="music"
+      :list-page="true"/>
+
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import MusicArticle from '~/components/MusicArticle.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    'music-article': MusicArticle
   }
 }
 </script>

@@ -15,14 +15,12 @@
       <p>
         {{ item.body }}
       </p>
-      <p>
-        <img :src="item.image.replace('/static', '')">
-      </p>
+      <div v-html="item.iframe"/>
       <nuxt-link
         v-if="!listPage"
-        to="/art"
+        to="/music"
         class="button--lila bottom button-shadow">
-        Art
+        Music
       </nuxt-link>
     </div>
   </section>

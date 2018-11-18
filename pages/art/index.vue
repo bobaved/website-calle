@@ -1,19 +1,21 @@
 <template>
   <section class="container">
-    <div>
-      <h1 class="title">
-        Art
-      </h1>
-    </div>
+    <art-article
+      v-for="art in $store.state.art"
+      :key="art._path"
+      :item="art"
+      :list-page="true"/>
+
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-
+import ArtArticle from '~/components/ArtArticle.vue'
 export default {
   components: {
-    Logo
+    Logo,
+    'art-article': ArtArticle
   }
 }
 </script>

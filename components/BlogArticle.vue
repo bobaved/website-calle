@@ -1,7 +1,7 @@
 <template>
   <section
     class="container b-g-gray"
-    style="margin-top: 130px; margin-bottom: 50px"
+    style="margin-top: 130px; margin-bottom: 50px; padding-bottom: 30px;"
   >
     <div>
       <a class="center">
@@ -15,11 +15,6 @@
       <p>
         {{ item.body }}
       </p>
-      <nuxt-link
-        to="/music"
-        class="button--lila bottom button-shadow">
-        Music
-      </nuxt-link>
     </div>
   </section>
 </template>
