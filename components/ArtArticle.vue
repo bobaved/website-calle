@@ -1,14 +1,19 @@
 <template>
   <section
     class="container b-g-gray"
-    style="margin-top: 130px; margin-bottom: 50px"
+    style="margin-top: 130px; margin-bottom: 50px; padding-bottom: 30px; padding-top: 30px;"
   >
     <div>
-      <a class="center">
+      <nuxt-link
+        v-if="!listPage"
+        to="/art"
+        class="center">
         <img
           src="/art.png"
-          style="box-shadow: 12px 12px 12px -6px rgba(0,0,0,.45);">
-      </a>
+          style="box-shadow: 12px 12px 12px -6px rgba(0,0,0,.45);"
+          height="200"
+          width="200">
+      </nuxt-link>
       <h3 class="mb-4">
         {{ item.title }}
       </h3>
@@ -18,12 +23,6 @@
       <p>
         <img :src="item.image.replace('/static', '')">
       </p>
-      <nuxt-link
-        v-if="!listPage"
-        to="/art"
-        class="button--lila bottom button-shadow">
-        Art
-      </nuxt-link>
     </div>
   </section>
 </template>

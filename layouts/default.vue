@@ -193,7 +193,7 @@ a {
 .center {
   position: relative;
   transform: translate(-50%, -50%);
-  top: -75px;
+  top: -90px;
 }
 
 .bottom {
